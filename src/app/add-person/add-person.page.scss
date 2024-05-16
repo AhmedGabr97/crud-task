@@ -1,0 +1,13 @@
+ion-header{
+    border-bottom: 1px solid #ccc;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px; 
+}
+
+ion-input{
+    --highlight-color-valid : var(--ion-color-primary);
+}

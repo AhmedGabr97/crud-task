@@ -1,0 +1,40 @@
+<ion-header [translucent]="true" class="ion-no-border">
+  <ion-toolbar color="white">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Person Details</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list>
+    <ion-item>
+      <ion-label>Name</ion-label>
+      <ion-text>{{ person.name }}</ion-text>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Age</ion-label>
+      <ion-text>{{ person.age }}</ion-text>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Nationality ID</ion-label>
+      <ion-text>{{ person.nationalityID }}</ion-text>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Birth Date</ion-label>
+      <ion-text>{{ person.birthDate }}</ion-text>
+    </ion-item>
+  </ion-list>
+
+  <div class="ion-text-center">
+    <ion-button color="secondary" routerLink="/edit-page/{{person.personID}}">Edit</ion-button>
+    <ion-button color="danger" (click)="deletePerson(person.personID)" id="open-toast">Delete</ion-button>
+  </div>
+  
+  <ion-toast trigger="open-toast" message="User Deleted Successfully , Redirecting..." color="success" [duration]="3000"></ion-toast>
+
+</ion-content>

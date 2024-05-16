@@ -1,0 +1,21 @@
+<ion-header [translucent]="true" class="ion-no-border">
+  <ion-toolbar color="white">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Person Details</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <div class="form">
+    <ion-input [(ngModel)] = "personData.name"  fill="outline" placeholder="Enter Your Name" value="{{personData.name}}" ></ion-input>
+    <ion-input [(ngModel)] = "personData.age"  fill="outline" placeholder="Enter Your Age"  value="{{personData.age}}" ></ion-input>
+    <ion-input [(ngModel)] = "personData.nationalityID" fill="outline" placeholder="Enter Your Nationality ID"   value="{{personData.nationalityID}}"></ion-input>
+    <ion-input [(ngModel)] = "personData.birthDate"   fill="outline" placeholder="Enter Your birthDate" type="date" ></ion-input>
+  </div>
+  
+  <div class="ion-text-center ion-padding">
+    <ion-button color="primary" (click)="editPerson()">Add Person</ion-button>
+  </div>
+</ion-content>

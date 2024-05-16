@@ -1,20 +1,38 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
+<ion-header class="ion-no-border">
+    <ion-toolbar color="white" >
+      <ion-avatar slot="start" style="width: 40px; height: 40px; margin-left: 10px">
+        <img src="../../../assets/icon/appy.png" />
+      </ion-avatar>
+  
+      <div class="user-info">
+        <ion-label class="app-name">Welcome</ion-label>
+        <ion-label class="user-name">{{ userName }} 👋</ion-label>
+      </div>
+  
+      <ion-buttons slot="end">
+        <ion-button  (click)="searchInput()">
+          <ion-icon [name]="searchBarShow ? 'close' : 'search'" color="primary" size="medium"></ion-icon>
+        </ion-button>
+  
+        <ion-button class="add-button" routerLink="/add-person">
+          <ion-icon name="add-circle" color="primary"></ion-icon>
+        </ion-button>
+      </ion-buttons>
     </ion-toolbar>
-  </ion-header>
+  
+    <div *ngIf="searchBarShow === true">
+      <ion-toolbar >
+        <ion-searchbar [(ngModel)]="searchQuery" (ionChange)="applyFilter()"></ion-searchbar>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+      </ion-toolbar>
+    </div>
+  
+  </ion-header>
+  
+
+<ion-content class="ion-padding-top">
+    <ion-title class="ion-margin-bottom" color="primary" size="large">All Persons</ion-title>
+    <div class="ion-margin" *ngFor="let person of filteredPersons">
+        <app-card name="{{person.name}}" personID="{{person.personID}}" ></app-card>
+    </div>
 </ion-content>

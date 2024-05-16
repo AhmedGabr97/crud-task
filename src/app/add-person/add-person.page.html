@@ -1,0 +1,24 @@
+<ion-header [translucent]="true" class="ion-no-border" >
+  <ion-toolbar color="white">
+
+    <ion-buttons slot="start"> 
+      <ion-back-button defaultHref="/">
+        <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+      </ion-back-button>
+    </ion-buttons>
+    <ion-title>AddPerson</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding ">
+  <div class="form">
+    <ion-input [(ngModel)]="name" label="Name" label-placement="floating" fill="outline" placeholder="Enter Your Name" ></ion-input>
+    <ion-input [(ngModel)]="age" label="Age"  label-placement="floating" fill="outline" placeholder="Enter Your Age"></ion-input>
+    <ion-input [(ngModel)]="nationalityID" label="Nationality ID" label-placement="floating" fill="outline" placeholder="Enter Your Nationality ID" ></ion-input>
+    <ion-input [(ngModel)]="birthDate" label="BirthDate" label-placement="floating" fill="outline" placeholder="Enter Your birthDate" type="date"></ion-input>
+  </div>
+  
+  <div class="ion-text-center ion-padding">
+    <ion-button color="primary" (click)="addPerson()">Add Person</ion-button>
+  </div>
+</ion-content>

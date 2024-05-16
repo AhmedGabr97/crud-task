@@ -1,27 +1,31 @@
-#container {
-  text-align: center;
-
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+ion-content{
+  --background: #EFF3FA;
 }
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
+ion-header{
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
 }
 
-#container p {
+.user-info{
+  margin-left: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.user-name{
+  font-weight: bold;
   font-size: 16px;
-  line-height: 22px;
-
-  color: #8c8c8c;
-
-  margin: 0;
 }
 
-#container a {
-  text-decoration: none;
+ion-searchbar{
+  // border
+  --border-radius: 10px;
+  --border-width: 1px;
+  --box-shadow: 2px 1px 2px rgba(0, 0, 0, 0.2);
+  --icon-color: var(--ion-color-primary);
 }
+
+
+
